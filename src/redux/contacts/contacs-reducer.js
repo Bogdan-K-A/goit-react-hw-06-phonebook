@@ -13,7 +13,16 @@ const contacts = [
 ]
 
 const contactsReducer = createReducer(contacts, {
-  [addContact]: (state, { payload }) => [...state, payload],
+  [addContact]: (state, { payload }) => {
+    const reLockInput = state.find((contact) => contact.name === payload.name)
+
+    if (reLockInput) {
+      alert('Такой контакт уже есть в списке')
+      return state
+    } else {
+      return [...state, payload]
+    }
+  },
   [contactDelete]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
   [getContactFromLocaleStorage]: (_, { payload }) => payload,

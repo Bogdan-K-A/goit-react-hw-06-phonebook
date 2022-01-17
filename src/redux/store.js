@@ -1,4 +1,3 @@
-// import { combineReducers } from 'redux'
 import {
   configureStore,
   getDefaultMiddleware,
@@ -41,5 +40,3 @@ export const store = configureStore({
 })
 
 export const persistor = persistStore(store)
-
-// export default { store, persistor }
