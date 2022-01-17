@@ -20,5 +20,3 @@ const contactsReducer = createReducer(contacts, {
 })
 
 export default contactsReducer
-
-// [keyName] : (state, action) => { }
